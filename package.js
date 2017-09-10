@@ -1,5 +1,5 @@
 Package.describe({
-  name: 'navybits:pagination',
+  name: 'jremi-navybits:pagination',
   version: '1.0.22',
   // Brief, one-line summary of the package.
   summary: 'Paginate efficiently whatever you want, and whenever you want. A meteor pagination by Navybits',

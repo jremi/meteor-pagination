@@ -71,12 +71,12 @@ Template.navybitsPagination.onCreated(function () {
     this.autorun(() => {
         //getting the current external search word
         var dataContext = Template.currentData();
-        let {
-            externalSearchText,
-            subscriptionDetails,
-            perPage,
-            limitIncrease
-        } = dataContext;
+        // *** Modified by Jremi for Meteor 1.5.2 Compatibility ***
+        var externalSearchText = null,
+            subscriptionDetails = dataContext,
+            perPage = null,
+            limitIncrease = null;
+        // *** ------------------------------------------------ ***
         if (perPage) self.perPage.set(Number(perPage));
         if (limitIncrease) self.limitIncrease.set(limitIncrease || perPage * 3);
 
@@ -116,7 +116,7 @@ Template.navybitsPagination.onCreated(function () {
     try {
         $('select').material_select();
     } catch (error) {
-        console.log('Materialize is not supported!');
+       // console.log('Materialize is not supported!');
     }
 });
 
@@ -337,6 +337,6 @@ Template.navybitsPagination.rendered = function () {
     try {
         $('select').material_select();
     } catch (error) {
-        console.log('Materialize is not supported!');
+        //console.log('Materialize is not supported!');
     }
 }
